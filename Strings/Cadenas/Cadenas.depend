@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1536326431 source:d:\galvan\cadenas\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1536329810 source:d:\galvan\laboratorio-y-programacion1\cadenas\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1536624427 source:e:\programacion\10 septiembre\laboratorio-y-programacion1\cadenas\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
