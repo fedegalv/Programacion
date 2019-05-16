@@ -13,3 +13,106 @@
 	<stdlib.h>
 	"funcionesAux.h"
 
+1557411344 source:d:\galvan\programacion\2019\primer_parcial\funcionesaux.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	"ctype.h"
+	"funcionesAux.h"
+	"pelicula.h"
+	"informes.h"
+
+1557402308 d:\galvan\programacion\2019\primer_parcial\funcionesaux.h
+
+1557402308 source:d:\galvan\programacion\2019\primer_parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funcionesAux.h"
+
+1557411152 d:\galvan\programacion\2019\primer_parcial\pelicula.h
+	"actores.h"
+
+1557407946 source:d:\galvan\programacion\2019\primer_parcial\actores.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pelicula.h"
+	"actores.h"
+	"funcionesAux.h"
+
+1557407946 d:\galvan\programacion\2019\primer_parcial\actores.h
+
+1557411152 source:d:\galvan\programacion\2019\primer_parcial\pelicula.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ctype.h"
+	"pelicula.h"
+	"pelicula.h"
+	"funcionesAux.h"
+
+1557411976 source:d:\galvan\programacion\2019\primer_parcial\informes.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	"ctype.h"
+	"funcionesAux.h"
+	"informes.h"
+	"pelicula.h"
+
+1557411245 d:\galvan\programacion\2019\primer_parcial\informes.h
+	"actores.h"
+	"pelicula.h"
+
+1557976162 source:e:\programacion\2019 programacion\programacion\2019\primer_parcial\actores.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pelicula.h"
+	"actores.h"
+	"funcionesAux.h"
+
+1557973297 e:\programacion\2019 programacion\programacion\2019\primer_parcial\pelicula.h
+	"actores.h"
+
+1557953228 e:\programacion\2019 programacion\programacion\2019\primer_parcial\actores.h
+
+1557861341 e:\programacion\2019 programacion\programacion\2019\primer_parcial\funcionesaux.h
+
+1557975916 source:e:\programacion\2019 programacion\programacion\2019\primer_parcial\funcionesaux.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	"ctype.h"
+	"funcionesAux.h"
+	"pelicula.h"
+	"informes.h"
+
+1557974100 e:\programacion\2019 programacion\programacion\2019\primer_parcial\informes.h
+	"actores.h"
+	"pelicula.h"
+
+1557402308 source:e:\programacion\2019 programacion\programacion\2019\primer_parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funcionesAux.h"
+
+1557976100 source:e:\programacion\2019 programacion\programacion\2019\primer_parcial\pelicula.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ctype.h"
+	"pelicula.h"
+	"pelicula.h"
+	"funcionesAux.h"
+	"informes.h"
+
+1557974624 source:e:\programacion\2019 programacion\programacion\2019\primer_parcial\informes.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	"ctype.h"
+	"funcionesAux.h"
+	"informes.h"
+	"pelicula.h"
+

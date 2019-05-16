@@ -3,58 +3,93 @@
 #include "string.h"
 #include "ctype.h"
 #include "funcionesAux.h"
+#include "pelicula.h"
+#include "informes.h"
+#define CANT_PEL 10
+#define CANT_ACTORES 5
 int menuOpciones(void)
 {
     int opcion;
+    sPelicula listaPeliculas[CANT_PEL];
+    sPelicula copiaListaPeliculas[CANT_PEL];
+    sActor listaActores[5];
+    sActor copiaListaActores[5];
+    int idOrigen= 1000;
+    int posicionLibre;
+    int opcionDos;
+
+    sActor_Hardcoded(listaActores);
+    sPelicula_Init(listaPeliculas, CANT_PEL);
+    idOrigen= sPelicula_Hardcoded(listaPeliculas, idOrigen, listaActores);
     do{
         printf("***** MENU PRINCIPAL **** \n\n");
-        printf("1- "
-               "\n2- "
-               "\n3- "
-               "\n4- "
-               "\n5- "
-               "\n6- "
-               "\n7- "
-               "\n8- "
-               "\n9- "
-               "\n10- "
+        printf("1- ALTAS PELICULAS "
+               "\n2- LISTAR "
+               "\n3- MODIFICAR DATOS "
+               "\n4- BAJA PELICULA"
+               "\n5- LISTAR ORDENADA"
+               "\n6- FILTROS"
                "\nOPCION SELECCIONADA: ");
         scanf("%d",&opcion);
 
         switch(opcion)
         {
         case 1:
-            printf("1");
+            posicionLibre=  sPelicula_buscarLugarLibre(listaPeliculas, CANT_PEL);
+            altasPelicula(listaPeliculas, listaActores, idOrigen, posicionLibre, CANT_PEL);
+            idOrigen++;
             break;
         case 2:
-            printf("1");
+            //listaPeliculaSinActores(listaPeliculas, CANT_PEL);
+            mostrarPeliculasYActores(listaPeliculas, listaActores,CANT_PEL, CANT_ACTORES);
+            listaPeliculaConActores(listaPeliculas, CANT_PEL);
+            //mostrarPeliculasYActores()
             break;
         case 3:
-
+            modificarPelicula(listaPeliculas, CANT_PEL, listaActores, CANT_ACTORES);
             break;
         case 4:
-
+            bajaPelicula(listaPeliculas, CANT_PEL);
             break;
-        case 5:
+        case CANT_ACTORES:
+            limpiarPantalla();
+            fflush(stdin);
+            printf("1- Peliculas ordenadas por anio de estreno\n2- Actores ordenados por pais de origen\nOPCION SELECCIONADA: ");
+            scanf("%d", &opcionDos);
+            if(opcionDos == 1)
+            {
+                /*
+                ordenarPorAnioEstreno(listaPeliculas, CANT_PEL);
+                printf("PELICULAS ORDENADAS POR ANIO DE ESTRENO: \n");
+                listaPeliculaConActores(listaPeliculas, CANT_PEL);
+                */
+                ordenarCopiaPorAnioEstreno(listaPeliculas,copiaListaPeliculas, CANT_PEL);
+                printf("PELICULAS ORDENADAS POR ANIO DE ESTRENO: \n");
+                listaPeliculaConActores(copiaListaPeliculas, CANT_PEL);
 
-            break;
-        case 6:
+            }else if(opcionDos == 2)
+            {
+                /*
+                ordenarActoresPorOrigen(listaActores, 5);
+                printf("ACTORES ORDENADO POR PAIS DE ORIGEN: \n");
+                mostrarActores(listaActores, 5);
+                */
+                ordenarCopiaActoresPorOrigen(listaActores, copiaListaActores, CANT_ACTORES);
+                printf("ACTORES ORDENADO POR PAIS DE ORIGEN: \n");
+                mostrarActores(copiaListaActores, CANT_ACTORES);
 
+            }else{printf("OPCION INVALIDA\n");}
+            limpiarPantalla();
             break;
-        case 7:
-
-            break;
-        case 8:
-
-            break;
-        case 9:
-
-            break;
-        case 10:
-
-            break;
+            case 6:\
+            filtroPeliculas(listaPeliculas, CANT_PEL);
+            filtroActores(listaActores, CANT_ACTORES);
+            filtroActorPeliculas(listaActores, listaPeliculas, CANT_PEL);
+                break;
         default:
-            printf("OPCION NO VALIDA/n");
+            printf("OPCION NO VALIDA\n");
+            fflush(stdin);
+            limpiarPantalla();
         }
     }while(opcion != 11);
     return 1;
@@ -147,3 +182,5 @@ void formateoCadenas(char* texto)
     }
 
 }
+
+
