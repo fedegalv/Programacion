@@ -41,8 +41,21 @@ int menuOpciones(void)
             break;
         case 2:
             //listaPeliculaSinActores(listaPeliculas, CANT_PEL);
-            mostrarPeliculasYActores(listaPeliculas, listaActores,CANT_PEL, CANT_ACTORES);
+            fflush(stdin);
+            printf("1- Lista sin actores\n2- Lista con actores\nOPCION SELECCIONADA: ");
+            scanf("%d", &opcionDos);
+            if(opcionDos == 1)
+            {
+            printf("LISTA SIN ACTORES\n");
             listaPeliculaConActores(listaPeliculas, CANT_PEL);
+            }
+            else if(opcionDos == 2)
+            {
+            limpiarPantalla();
+            printf("LISTA CON ACTORES\n");
+            mostrarPeliculasYActores(listaPeliculas, listaActores,CANT_PEL, CANT_ACTORES);
+            }
+            else{printf("OPCION INVALIDA\n");}
             //mostrarPeliculasYActores()
             break;
         case 3:
@@ -51,7 +64,7 @@ int menuOpciones(void)
         case 4:
             bajaPelicula(listaPeliculas, CANT_PEL);
             break;
-        case CANT_ACTORES:
+        case 5:
             limpiarPantalla();
             fflush(stdin);
             printf("1- Peliculas ordenadas por anio de estreno\n2- Actores ordenados por pais de origen\nOPCION SELECCIONADA: ");
@@ -66,6 +79,7 @@ int menuOpciones(void)
                 ordenarCopiaPorAnioEstreno(listaPeliculas,copiaListaPeliculas, CANT_PEL);
                 printf("PELICULAS ORDENADAS POR ANIO DE ESTRENO: \n");
                 listaPeliculaConActores(copiaListaPeliculas, CANT_PEL);
+                limpiarPantalla();
 
             }else if(opcionDos == 2)
             {
@@ -81,10 +95,38 @@ int menuOpciones(void)
             }else{printf("OPCION INVALIDA\n");}
             limpiarPantalla();
             break;
-            case 6:\
-            filtroPeliculas(listaPeliculas, CANT_PEL);
-            filtroActores(listaActores, CANT_ACTORES);
-            filtroActorPeliculas(listaActores, listaPeliculas, CANT_PEL);
+            case 6:
+                fflush(stdin);
+                printf("1- Todas las peliculas con genero y actor\n2- Peliculas cuya nacionalidad del actor sea EEUU\n3- Peliculas nacionalidad ingresada por consola\n4- Peliculas por genero\n5- Cantidad peliculas por genero\n6- Actores que mas peliculas protagonizaron\nOPCION SELECCIONADA: ");
+            scanf("%d", &opcionDos);
+            if(opcionDos == 1)
+            {
+            filtroGenero(listaActores, listaPeliculas, CANT_PEL);
+            }
+            else if(opcionDos == 2)
+            {
+                filtroActoresNacionalidad(listaActores, listaPeliculas, CANT_PEL);
+            }
+            else if(opcionDos == 3)
+            {
+                filtroIngresadoPorConsola(listaPeliculas, CANT_PEL, listaActores);
+            }
+            else if(opcionDos == 4)
+            {
+                filtroGeneroPeliculas(listaActores, listaPeliculas, CANT_PEL);
+            }
+            else if(opcionDos == 5)
+            {
+                filtroGeneroPeliculasContador(listaActores, listaPeliculas, CANT_PEL);
+            }
+            else if(opcionDos == 6)
+            {
+                filtroGeneroPeliculasContador(listaActores, listaPeliculas, CANT_PEL);
+            }
+            else{printf("OPCION INVALIDA\n");}
+            limpiarPantalla();
+            break;
+
                 break;
         default:
             printf("OPCION NO VALIDA\n");

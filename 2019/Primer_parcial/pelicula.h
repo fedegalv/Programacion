@@ -27,6 +27,7 @@ int verificarFecha(int fechaEstreno);
 int bajaPelicula(sPelicula listaPeliculas[], int tamLista);
 int ordenarPorAnioEstreno(sPelicula listaPeliculas[], int tamLista);
 int ordenarCopiaPorAnioEstreno(sPelicula listaPeliculas[], sPelicula copiaLista[], int tamLista);
+int seleccionGenero(char genero[]);
 
 
 #endif

@@ -13,7 +13,7 @@
 	<stdlib.h>
 	"funcionesAux.h"
 
-1557411344 source:d:\galvan\programacion\2019\primer_parcial\funcionesaux.c
+1558016983 source:d:\galvan\programacion\2019\primer_parcial\funcionesaux.c
 	<stdio.h>
 	<stdlib.h>
 	"string.h"
@@ -22,17 +22,17 @@
 	"pelicula.h"
 	"informes.h"
 
-1557402308 d:\galvan\programacion\2019\primer_parcial\funcionesaux.h
+1558007627 d:\galvan\programacion\2019\primer_parcial\funcionesaux.h
 
-1557402308 source:d:\galvan\programacion\2019\primer_parcial\main.c
+1558007627 source:d:\galvan\programacion\2019\primer_parcial\main.c
 	<stdio.h>
 	<stdlib.h>
 	"funcionesAux.h"
 
-1557411152 d:\galvan\programacion\2019\primer_parcial\pelicula.h
+1558013131 d:\galvan\programacion\2019\primer_parcial\pelicula.h
 	"actores.h"
 
-1557407946 source:d:\galvan\programacion\2019\primer_parcial\actores.c
+1558007627 source:d:\galvan\programacion\2019\primer_parcial\actores.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -40,9 +40,9 @@
 	"actores.h"
 	"funcionesAux.h"
 
-1557407946 d:\galvan\programacion\2019\primer_parcial\actores.h
+1558007627 d:\galvan\programacion\2019\primer_parcial\actores.h
 
-1557411152 source:d:\galvan\programacion\2019\primer_parcial\pelicula.c
+1558016780 source:d:\galvan\programacion\2019\primer_parcial\pelicula.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -50,8 +50,9 @@
 	"pelicula.h"
 	"pelicula.h"
 	"funcionesAux.h"
+	"informes.h"
 
-1557411976 source:d:\galvan\programacion\2019\primer_parcial\informes.c
+1558017073 source:d:\galvan\programacion\2019\primer_parcial\informes.c
 	<stdio.h>
 	<stdlib.h>
 	"string.h"
@@ -60,7 +61,7 @@
 	"informes.h"
 	"pelicula.h"
 
-1557411245 d:\galvan\programacion\2019\primer_parcial\informes.h
+1558017017 d:\galvan\programacion\2019\primer_parcial\informes.h
 	"actores.h"
 	"pelicula.h"
 

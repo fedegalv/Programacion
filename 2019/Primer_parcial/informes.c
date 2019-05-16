@@ -12,13 +12,13 @@ void listaPeliculaSinActores(sPelicula lista[], int cantPel)
     printf("\nMOSTRAR PELICULAS SIN ACTORES\n\n");
     {
         for(i=0; i < cantPel; i++)
+        {
+            if(lista[i].actorPrincipal.idActor == -1 && lista[i].estado ==1)
             {
-                if(lista[i].actorPrincipal.idActor == -1 && lista[i].estado ==1)
-                {
-                    mostrarUnaPelicula(lista[i]);
-                }
+                mostrarUnaPelicula(lista[i]);
             }
-            limpiarPantalla();
+        }
+        limpiarPantalla();
     }
 
 }
@@ -35,25 +35,23 @@ void listaPeliculaConActores(sPelicula lista[], int cantPel)
             mostrarUnaPelicula(lista[i]);
         }
     }
-    printf("\n\n");
     limpiarPantalla();
 }
 
 void mostrarPeliculasYActores(sPelicula listaPeliculas[], sActor listaActores[], int tamPeliculas, int tamActores)
 {
     int i;
-    limpiarPantalla();
     for(i=0; i<tamPeliculas; i++)
     {
-         if(listaPeliculas[i].estado == 1)
-         {
+        if(listaPeliculas[i].estado == 1)
+        {
 
-             mostrarEncabezado();
-             mostrarUnaPelicula(listaPeliculas[i]);
-             printf("\n%s %15s %15s\n","ID ","NOMBRE", "PAIS ORIGEN");
-             mostrarActorSolo( listaPeliculas[i].actorPrincipal );
-             printf("--------------------------------------------------------------------------------------\n");
-         }
+            mostrarEncabezado();
+            mostrarUnaPelicula(listaPeliculas[i]);
+            printf("\n%s %15s %15s\n","ID ","NOMBRE", "PAIS ORIGEN");
+            mostrarActorSolo( listaPeliculas[i].actorPrincipal );
+            printf("-------------------------------------------------------------------\n");
+        }
 
     }
     limpiarPantalla();
@@ -98,12 +96,200 @@ void filtroActorPeliculas(sActor listaActores[], sPelicula listaPeliculas[], int
     {
         if( listaPeliculas[i].fechaEstreno > 2000 && listaPeliculas[i].estado == 1 && strcmpi(listaPeliculas[i].actorPrincipal.paisOrigen, "Argentina") == 0 )
         {
-             mostrarEncabezado();
-             mostrarUnaPelicula(listaPeliculas[i]);
-             printf("\n%s %15s %15s\n","ID","NOMBRE", "PAIS ORIGEN");
-             mostrarActorSolo( listaPeliculas[i].actorPrincipal );
-             printf("------------------------------------------------------\n");
+            mostrarEncabezado();
+            mostrarUnaPelicula(listaPeliculas[i]);
+            printf("\n%s %15s %15s\n","ID","NOMBRE", "PAIS ORIGEN");
+            mostrarActorSolo( listaPeliculas[i].actorPrincipal );
+            printf("------------------------------------------------------\n");
         }
     }
     limpiarPantalla();
 }
+void filtroPeliculasYGenero(sActor listaActores[], sPelicula listaPeliculas[], int tamPeliculas)
+{
+    int i;
+    limpiarPantalla();
+    for(i=0; i<tamPeliculas; i++)
+    {
+        if( listaPeliculas[i].estado == 1 )
+        {
+            /*
+             printf("%s","Genero:");
+             printf("%s\n",listaPeliculas[i].genero);
+             printf("\n%s %15s %15s\n","ID","NOMBRE", "PAIS ORIGEN");
+             mostrarActorSolo( listaPeliculas[i].actorPrincipal );
+             printf("----------------------------------------------------\n");
+             */
+            if( strcmp(listaPeliculas[i].genero, "accion"))
+            {
+                printf("\n%s %15s %15s\n","ID","NOMBRE", "PAIS ORIGEN");
+                mostrarActorSolo( listaPeliculas[i].actorPrincipal );
+            }
+            else if( strcmp(listaPeliculas[i].genero, "comedia"))
+            {
+                printf("\n%s %15s %15s\n","ID","NOMBRE", "PAIS ORIGEN");
+                mostrarActorSolo( listaPeliculas[i].actorPrincipal );
+            }
+            else if(strcmp(listaPeliculas[i].genero, "terror"))
+            {
+                printf("\n%s %15s %15s\n","ID","NOMBRE", "PAIS ORIGEN");
+                mostrarActorSolo( listaPeliculas[i].actorPrincipal );
+            }
+            else
+            {
+                printf("%s","Genero:");
+                printf("%s\n",listaPeliculas[i].genero);
+            }
+        }
+    }
+    limpiarPantalla();
+}
+
+void filtroActoresNacionalidad(sActor listaActores[],sPelicula listaPeliculas[], int tamPeliculas)
+{
+    limpiarPantalla();
+    int i;
+    printf("PELICULAS CUYA NACIONALIDAD DEL ACTOR SEA EEUU:\n");
+    mostrarEncabezado();
+    for(i=0; i<tamPeliculas; i++)
+    {
+        //strcmp(listaActores[i].paisOrigen, "EEUU") == 0
+        if(listaPeliculas[i].estado == 1 && strcmp(listaPeliculas[i].actorPrincipal.paisOrigen, "EEUU") == 0)
+        {
+            mostrarUnaPelicula(listaPeliculas[i]);
+        }
+    }
+    limpiarPantalla();
+}
+void filtroGenero(sActor listaActores[], sPelicula listaPeliculas[], int tamPeliculas)
+{
+    limpiarPantalla();
+    recorreLista(listaPeliculas, tamPeliculas, "accion");
+    printf("-------------------------------------------\n");
+    recorreLista(listaPeliculas, tamPeliculas, "comedia");
+    printf("-------------------------------------------\n");
+    recorreLista(listaPeliculas, tamPeliculas, "terror");
+    printf("-------------------------------------------\n");
+    recorreLista(listaPeliculas, tamPeliculas, "romantica");
+    printf("-------------------------------------------\n");
+    recorreLista(listaPeliculas, tamPeliculas, "otro");
+
+}
+int recorreLista(sPelicula listaPeliculas[], int tamPeliculas, char cadenaChar[])
+{
+    int i;
+    int cont=0;
+    printf("GENERO %s\n", cadenaChar);
+    for(i=0; i<tamPeliculas; i++)
+    {
+        if( listaPeliculas[i].estado == 1 && strcmp(listaPeliculas[i].genero, cadenaChar)== 0)
+        {
+            printf("\n%s %15s %15s\n","ID","NOMBRE", "PAIS ORIGEN");
+            mostrarActorSolo( listaPeliculas[i].actorPrincipal );
+            cont++;
+        }
+    }
+    if(cont == 0)
+    {
+        printf("N/A\n");
+    }
+    return 0;
+}
+int filtroIngresadoPorConsola(sPelicula listaPeliculas[], int tamPeliculas, sActor listaActores[])
+{
+    char opcion[64];
+    int i;
+    int cont=0;
+    printf("Ingrese pais para mostrar peliculas: ");
+    fflush(stdin);
+    gets(opcion);
+    mostrarEncabezado();
+    for(i=0; i < tamPeliculas; i++)
+    {
+        if( strcmpi(listaPeliculas[i].actorPrincipal.paisOrigen, opcion) == 0 && listaPeliculas[i].estado == 1)
+        {
+            mostrarUnaPelicula(listaPeliculas[i]);
+            cont++;
+        }
+    }
+    if( cont == 0)
+    {
+        printf("\n-----\nNo se ha encontrado peliculas validas!\n-----\n");
+    }
+    limpiarPantalla();
+    return 0;
+}
+void filtroGeneroPeliculas(sActor listaActores[], sPelicula listaPeliculas[], int tamPeliculas)
+{
+    limpiarPantalla();
+    recorreListaPeliculas(listaPeliculas, tamPeliculas, "accion");
+    printf("-------------------------------------------\n");
+    recorreListaPeliculas(listaPeliculas, tamPeliculas, "comedia");
+    printf("-------------------------------------------\n");
+    recorreListaPeliculas(listaPeliculas, tamPeliculas, "terror");
+    printf("-------------------------------------------\n");
+    recorreListaPeliculas(listaPeliculas, tamPeliculas, "romantica");
+    printf("-------------------------------------------\n");
+    recorreListaPeliculas(listaPeliculas, tamPeliculas, "otro");
+
+}
+int recorreListaPeliculas(sPelicula listaPeliculas[], int tamPeliculas, char cadenaChar[])
+{
+    int i;
+    int cont=0;
+    printf("GENERO %s\n\n", cadenaChar);
+    mostrarEncabezado();
+    for(i=0; i<tamPeliculas; i++)
+    {
+        if( listaPeliculas[i].estado == 1 && strcmp(listaPeliculas[i].genero, cadenaChar)== 0)
+        {
+            mostrarUnaPelicula(listaPeliculas[i]);
+            cont++;
+        }
+    }
+    if(cont == 0)
+    {
+        printf("N/A\n");
+    }
+    return 0;
+}
+
+void filtroGeneroPeliculasContador(sActor listaActores[], sPelicula listaPeliculas[], int tamPeliculas)
+{
+    limpiarPantalla();
+    recorreListaPeliculasContador(listaPeliculas, tamPeliculas, "accion");
+    printf("-------------------------------------------\n");
+    recorreListaPeliculasContador(listaPeliculas, tamPeliculas, "comedia");
+    printf("-------------------------------------------\n");
+    recorreListaPeliculasContador(listaPeliculas, tamPeliculas, "terror");
+    printf("-------------------------------------------\n");
+    recorreListaPeliculasContador(listaPeliculas, tamPeliculas, "romantica");
+    printf("-------------------------------------------\n");
+    recorreListaPeliculasContador(listaPeliculas, tamPeliculas, "otro");
+
+}
+int recorreListaPeliculasContador(sPelicula listaPeliculas[], int tamPeliculas, char cadenaChar[])
+{
+    int i;
+    int cont=0;
+    printf("GENERO %s\n\n", cadenaChar);
+    for(i=0; i<tamPeliculas; i++)
+    {
+        if( listaPeliculas[i].estado == 1 && strcmp(listaPeliculas[i].genero, cadenaChar)== 0)
+        {
+            cont++;
+        }
+
+    }
+
+    if(cont == 0)
+    {
+        printf("N/A\n");
+    }
+    else{
+        printf("CANTIDAD DE PELICULAS DEL GENERO: %d\n\n", cont);
+    }
+    return 0;
+}
+
+

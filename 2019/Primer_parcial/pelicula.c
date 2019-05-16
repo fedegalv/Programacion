@@ -44,18 +44,68 @@ int sPelicula_buscarLugarLibre(sPelicula listado[],int limite)
 
 int sPelicula_Hardcoded(sPelicula lista[], int idSemilla, sActor listaActores[])
 {
+    /*
     int idPelicula[5] = {1000, 1001, 1002, 1003, 1004};
     int codigoPelicula[5]= {123, 252, 458, 747, 196};
     char titulo[5][64]= {"Carnagedon","Sharko","Mulan","Avatar","Creeper"};
     int fechaEstreno[5] = {2000, 2010, 1950, 2012, 1980};
     char genero[5][64]= {"Accion","Accion","Cartoon","Sci fi","Terror"};
+    */
+    int idPelicula[8] = {1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007 };
+    int codigoPelicula[8]= {999, 666, 555, 777, 111, 222, 101, 202};
+    char titulo[8][64]= {"terminator","thor","it","gladiator", "scary movie 4", "Yo soy asi", "scary movie 2", "sexto sentido"};
+    int fechaEstreno[8] = {2000, 2010, 1950, 2012, 2012, 1990, 2015, 1999};
+    char genero[8][64]= {"accion","accion","terror","romantica", "comedia", "otro", "comedia", "otro"};
+    //int idActores[6]= {1, 2, 3, 4 ,4, 4};
 
-    for(int i=0; i < 5; i++)
+
+
+
+    int i;
+    for(i=0; i < 8; i++)
     {
+        /*
         lista[i].actorPrincipal.idActor= listaActores[i].idActor; // ASIGNARA ACTORES de 0 a 4(POSICION)
         strcpy(lista[i].actorPrincipal.nombreActor, listaActores[i].nombreActor);
         strcpy(lista[i].actorPrincipal.paisOrigen, listaActores[i].paisOrigen);
-///
+        */
+        if(i== 0)
+        {
+            lista[i].actorPrincipal.idActor= 1; // ASIGNARA ACTORES de 0 a 4(POSICION)
+        strcpy(lista[i].actorPrincipal.nombreActor, listaActores[0].nombreActor);
+        strcpy(lista[i].actorPrincipal.paisOrigen, listaActores[0].paisOrigen);
+        }
+        if(i== 1)
+        {
+            lista[i].actorPrincipal.idActor= 5; // ASIGNARA ACTORES de 0 a 4(POSICION)
+        strcpy(lista[i].actorPrincipal.nombreActor, listaActores[4].nombreActor);
+        strcpy(lista[i].actorPrincipal.paisOrigen, listaActores[4].paisOrigen);
+        }
+        if(i== 2)
+        {
+            lista[i].actorPrincipal.idActor= 4; // ASIGNARA ACTORES de 0 a 4(POSICION)
+        strcpy(lista[i].actorPrincipal.nombreActor, listaActores[3].nombreActor);
+        strcpy(lista[i].actorPrincipal.paisOrigen, listaActores[3].paisOrigen);
+        }
+        if(i== 3)
+        {
+            lista[i].actorPrincipal.idActor= 4; // ASIGNARA ACTORES de 0 a 4(POSICION)
+        strcpy(lista[i].actorPrincipal.nombreActor, listaActores[3].nombreActor);
+        strcpy(lista[i].actorPrincipal.paisOrigen, listaActores[3].paisOrigen);
+        }
+        if( i==4 || i==5)
+        {
+            lista[i].actorPrincipal.idActor= 4; // ASIGNARA ACTORES de 0 a 4(POSICION)
+            strcpy(lista[i].actorPrincipal.nombreActor, listaActores[3].nombreActor);
+            strcpy(lista[i].actorPrincipal.paisOrigen, listaActores[3].paisOrigen);
+        }
+        if( i==6 || i==7)
+        {
+            lista[i].actorPrincipal.idActor= 1; // ASIGNARA ACTORES de 0 a 4(POSICION)
+            strcpy(lista[i].actorPrincipal.nombreActor, listaActores[0].nombreActor);
+            strcpy(lista[i].actorPrincipal.paisOrigen, listaActores[0].paisOrigen);
+        }
+
         strcpy(lista[i].titulo, titulo[i]);
         lista[i].fechaEstreno= fechaEstreno[i];
         strcpy(lista[i].genero, genero[i]);
@@ -85,7 +135,7 @@ int verificarCodigoPelicula(int codigoPelicula)
         }
     }
     while(flag ==0);
-    return 1;
+    return codigoPelicula;
 }
 int verificarTitulo(char tituloPelicula[64])
 {
@@ -149,7 +199,7 @@ int altasPelicula(sPelicula lista[], sActor listaActores[], int idAsignada, int 
     fflush(stdin);
     printf("\nIngrese codigo de la pelicula: ");
     scanf("%d", &codigoPelicula );
-    verificarCodigoPelicula(codigoPelicula);
+    codigoPelicula= verificarCodigoPelicula(codigoPelicula);
     codigoPelicula= CodigoPeliculaRepetido(lista, tamPeliculas, codigoPelicula);
 
     fflush(stdin);
@@ -164,8 +214,7 @@ int altasPelicula(sPelicula lista[], sActor listaActores[], int idAsignada, int 
 
     fflush(stdin);
     printf("\nIngrese genero de la pelicula: ");
-    gets(genero);
-    verificarCadena(genero);
+    seleccionGenero(genero);
 
     mostrarActores(listaActores, 5);
     posicionActor= ingresoActor(listaActores, 5);
@@ -183,6 +232,32 @@ int altasPelicula(sPelicula lista[], sActor listaActores[], int idAsignada, int 
     lista[posicionLibre].idPelicula= idAsignada;//+1;
     printf("Alta exitosa\n");
     limpiarPantalla();
+    return 0;
+}
+int seleccionGenero(char genero[])
+{
+    int opcion;
+    printf("GENEROS: \n1- accion\n2- comedia\n3- terror\n4- otro\nOPCION SELECCIONADA: ");
+    scanf("%d",&opcion);
+    switch(opcion)
+    {
+    case 1:
+        strcpy(genero, "accion");
+        break;
+        case 2:
+            strcpy(genero, "comedia");
+        break;
+        case 3:
+            strcpy(genero, "terror");
+        break;
+        case 4:
+            strcpy(genero, "otro");
+        break;
+        default:
+            printf("NO VALIDO\n");
+
+    }
+    printf("\n\n\n");
     return 0;
 }
 int verificarFecha(int fechaEstreno)
@@ -226,10 +301,11 @@ void mostrarUnaPelicula(sPelicula pelicula)
 int buscarsPeliculaID(sPelicula lista[], int tam)
 {
     int id;
+    int i;
     int posicionEncontrada= -1;
     printf("Ingrese id a buscar: ");
     id= ingresoNumero();
-    for(int i= 0; i < tam; i++)
+    for(i= 0; i < tam; i++)
     {
         if(lista[i].idPelicula == id && lista[i].estado == 1)
         {
