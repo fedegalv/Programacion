@@ -286,10 +286,91 @@ int recorreListaPeliculasContador(sPelicula listaPeliculas[], int tamPeliculas, 
     {
         printf("N/A\n");
     }
-    else{
+    else
+    {
         printf("CANTIDAD DE PELICULAS DEL GENERO: %d\n\n", cont);
     }
     return 0;
 }
+int contadorGeneroPeliculas(sPelicula listaPeliculas[], int tamPeliculas, char cadenaChar[])
+{
+    int i;
+    int cont=0;
+    for(i=0; i<tamPeliculas; i++)
+    {
+        if( listaPeliculas[i].estado == 1 && strcmp(listaPeliculas[i].genero, cadenaChar)== 0)
+        {
+            cont++;
+        }
+
+    }
+    return cont;
+}
+int filtroActoresCantidadPeliculas(sPelicula listaPeliculas[], int tamPeliculas, sActor listaActores[], int tamActores)
+{
+    int i, j;
+    char actorMasPopular[64];
+    int contMasPopular =0;
+    int contActor =0;
+
+
+    for(i=0; i < tamActores; i++)
+    {
+        for(j=0; j < tamPeliculas; j++)
+        {
+            if( listaPeliculas[j].estado == 1 && ( listaActores[i].idActor == listaPeliculas[j].actorPrincipal.idActor) )
+            {
+                contActor++;
+            }
+        }
+        if(contActor > contMasPopular)
+        {
+            contMasPopular= contActor;
+            strcpy(actorMasPopular, listaActores[i].nombreActor);
+
+        }
+        contActor = 0;
+    }
+    printf("Actor que mas peliculas protagonizo es %s con %d peliculas\n",actorMasPopular, contMasPopular);
+    return 0;
+}
+void filtroGenerosMenosPeliculas(sPelicula listaPeliculas[], int tamPeliculas)
+{
+    int contadorGeneros[5];
+    char genero[5][64]= {"accion","comedia","terror","romantica", "otros"};
+    int i;
+    int contGeneroMenosPopular= 0;
+    int posMenosPopular;
+
+    contadorGeneros[0]= contadorGeneroPeliculas(listaPeliculas, tamPeliculas, "accion");
+
+    contadorGeneros[1]=contadorGeneroPeliculas(listaPeliculas, tamPeliculas, "comedia");
+
+    contadorGeneros[2]=contadorGeneroPeliculas(listaPeliculas, tamPeliculas, "terror");
+
+    contadorGeneros[3]=contadorGeneroPeliculas(listaPeliculas, tamPeliculas, "romantica");
+
+    contadorGeneros[4]=contadorGeneroPeliculas(listaPeliculas, tamPeliculas, "otro");
+
+    for(i=0; i < 5; i++)
+    {
+        if(i == 0)
+        {
+            contGeneroMenosPopular = contadorGeneros[0];
+            posMenosPopular= i;
+        }
+        else if( contadorGeneros[i] < contGeneroMenosPopular )
+        {
+            contGeneroMenosPopular= contadorGeneros[i];
+            posMenosPopular= i;
+        }
+    }
+
+    printf("El genero con menos peliculas es %s con %d peliculas\n", genero[posMenosPopular], contGeneroMenosPopular);
+
+}
+
+
+
 
 

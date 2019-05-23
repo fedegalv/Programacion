@@ -97,7 +97,9 @@ int menuOpciones(void)
             break;
             case 6:
                 fflush(stdin);
-                printf("1- Todas las peliculas con genero y actor\n2- Peliculas cuya nacionalidad del actor sea EEUU\n3- Peliculas nacionalidad ingresada por consola\n4- Peliculas por genero\n5- Cantidad peliculas por genero\n6- Actores que mas peliculas protagonizaron\nOPCION SELECCIONADA: ");
+                printf("1- Todas las peliculas con genero y actor\n2- Peliculas cuya nacionalidad del actor sea EEUU\n3- Peliculas nacionalidad ingresada por consola\n"
+                       "4- Peliculas por genero\n5- Cantidad peliculas por genero\n6- Actores que mas peliculas protagonizaron\n"
+                       "7- Genero/s con menos peliculas\n8- Actor/es que no trabajaron en ninguna pelicula\nOPCION SELECCIONADA: ");
             scanf("%d", &opcionDos);
             if(opcionDos == 1)
             {
@@ -121,7 +123,15 @@ int menuOpciones(void)
             }
             else if(opcionDos == 6)
             {
-                filtroGeneroPeliculasContador(listaActores, listaPeliculas, CANT_PEL);
+                filtroActoresCantidadPeliculas(listaPeliculas, CANT_PEL, listaActores, CANT_ACTORES);
+            }
+            else if(opcionDos == 7)
+            {
+                filtroGenerosMenosPeliculas(listaPeliculas, CANT_PEL);
+            }
+            else if(opcionDos == 8)
+            {
+
             }
             else{printf("OPCION INVALIDA\n");}
             limpiarPantalla();
