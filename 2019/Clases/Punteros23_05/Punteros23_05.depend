@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1558622160 source:d:\galvan\programacion\2019\clases\punteros23_05\main.c
+	<stdio.h>
+	<stdlib.h>
+	"persona.h"
+
+1558622153 d:\galvan\programacion\2019\clases\punteros23_05\persona.h
+
+1558623088 source:d:\galvan\programacion\2019\clases\punteros23_05\persona.c
+	<stdio.h>
+	<stdlib.h>
+	"persona.h"
+	"string.h"
+
