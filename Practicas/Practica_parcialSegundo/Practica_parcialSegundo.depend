@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1561577502 source:e:\programacion\2019 programacion\programacion\practicas\practica_parcialsegundo\funcionex_aux.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	<ctype.h>
+	"Funcionex_aux.h"
+
+1561577502 e:\programacion\2019 programacion\programacion\practicas\practica_parcialsegundo\funcionex_aux.h
+
+1561588139 source:e:\programacion\2019 programacion\programacion\practicas\practica_parcialsegundo\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"LogLibrary.h"
+	"Funcionex_aux.h"
+
+1561578056 source:e:\programacion\2019 programacion\programacion\practicas\practica_parcialsegundo\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1544623281 e:\programacion\2019 programacion\programacion\practicas\practica_parcialsegundo\linkedlist.h
+
+1561588203 source:e:\programacion\2019 programacion\programacion\practicas\practica_parcialsegundo\loglibrary.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	<ctype.h>
+	"LogLibrary.h"
+	"Funcionex_aux.h"
+	"LinkedList.h"
+
+1561588139 e:\programacion\2019 programacion\programacion\practicas\practica_parcialsegundo\loglibrary.h
+	"LinkedList.h"
+

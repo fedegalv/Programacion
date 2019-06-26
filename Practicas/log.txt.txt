@@ -1,0 +1,6 @@
+Fecha;Hora;ID;Gravedad;Mensaje
+09/07/2017;02:33;33;9;Disk faliure
+09/07/2017;0138;10;7;Out of memory
+10/08/2017;03:18;11;2;Time out
+24/10/2018;03:28;23;10;No power
+05/02/2019;02:38;00;5;Out of disk space
