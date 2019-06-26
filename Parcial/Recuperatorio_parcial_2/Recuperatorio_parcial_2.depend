@@ -1,0 +1,79 @@
+# depslib dependency file v1.0
+1544623296 source:d:\galvan\recuperatorio_parcial_2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"reglasNegocio.h"
+
+1544623281 d:\galvan\recuperatorio_parcial_2\linkedlist.h
+
+1544626651 d:\galvan\recuperatorio_parcial_2\reglasnegocio.h
+	"LinkedList.h"
+
+1544620150 source:d:\galvan\recuperatorio_parcial_2\funcionex_aux.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	<ctype.h>
+	"Funcionex_aux.h"
+
+1544620081 d:\galvan\recuperatorio_parcial_2\funcionex_aux.h
+
+1544626638 source:d:\galvan\recuperatorio_parcial_2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	<ctype.h>
+	"reglasNegocio.h"
+	"Funcionex_aux.h"
+	"LinkedList.h"
+
+1544626604 source:d:\galvan\recuperatorio_parcial_2\reglasnegocio.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	<ctype.h>
+	"reglasNegocio.h"
+	"Funcionex_aux.h"
+	"LinkedList.h"
+
+1544620150 source:e:\programacion\recuperatorio_parcial_2\funcionex_aux.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	<ctype.h>
+	"Funcionex_aux.h"
+
+1544620081 e:\programacion\recuperatorio_parcial_2\funcionex_aux.h
+
+1544623296 source:e:\programacion\recuperatorio_parcial_2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"reglasNegocio.h"
+
+1544623281 e:\programacion\recuperatorio_parcial_2\linkedlist.h
+
+1544748510 e:\programacion\recuperatorio_parcial_2\reglasnegocio.h
+	"LinkedList.h"
+
+1544748553 source:e:\programacion\recuperatorio_parcial_2\reglasnegocio.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	<ctype.h>
+	"reglasNegocio.h"
+	"Funcionex_aux.h"
+	"LinkedList.h"
+
+1544748684 source:e:\programacion\recuperatorio_parcial_2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	<ctype.h>
+	"reglasNegocio.h"
+	"Funcionex_aux.h"
+	"LinkedList.h"
+

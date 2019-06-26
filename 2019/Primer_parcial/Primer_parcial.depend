@@ -73,14 +73,14 @@
 	"actores.h"
 	"funcionesAux.h"
 
-1557973297 e:\programacion\2019 programacion\programacion\2019\primer_parcial\pelicula.h
+1558557850 e:\programacion\2019 programacion\programacion\2019\primer_parcial\pelicula.h
 	"actores.h"
 
 1557953228 e:\programacion\2019 programacion\programacion\2019\primer_parcial\actores.h
 
 1557861341 e:\programacion\2019 programacion\programacion\2019\primer_parcial\funcionesaux.h
 
-1557975916 source:e:\programacion\2019 programacion\programacion\2019\primer_parcial\funcionesaux.c
+1558562053 source:e:\programacion\2019 programacion\programacion\2019\primer_parcial\funcionesaux.c
 	<stdio.h>
 	<stdlib.h>
 	"string.h"
@@ -89,7 +89,7 @@
 	"pelicula.h"
 	"informes.h"
 
-1557974100 e:\programacion\2019 programacion\programacion\2019\primer_parcial\informes.h
+1558561998 e:\programacion\2019 programacion\programacion\2019\primer_parcial\informes.h
 	"actores.h"
 	"pelicula.h"
 
@@ -98,7 +98,7 @@
 	<stdlib.h>
 	"funcionesAux.h"
 
-1557976100 source:e:\programacion\2019 programacion\programacion\2019\primer_parcial\pelicula.c
+1558557850 source:e:\programacion\2019 programacion\programacion\2019\primer_parcial\pelicula.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -108,7 +108,7 @@
 	"funcionesAux.h"
 	"informes.h"
 
-1557974624 source:e:\programacion\2019 programacion\programacion\2019\primer_parcial\informes.c
+1558562094 source:e:\programacion\2019 programacion\programacion\2019\primer_parcial\informes.c
 	<stdio.h>
 	<stdlib.h>
 	"string.h"

@@ -1,0 +1,93 @@
+# depslib dependency file v1.0
+1543504752 source:d:\galvan\parcial_2\alumnos.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	<ctype.h>
+	<time.h>
+	"Alumnos.h"
+	"LinkedList.h"
+
+1543503121 d:\galvan\parcial_2\alumnos.h
+	"LinkedList.h"
+
+1543496602 d:\galvan\parcial_2\parser.h
+
+1543500217 d:\galvan\parcial_2\linkedlist.h
+
+1543501188 source:d:\galvan\parcial_2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Alumnos.h"
+
+1543505372 source:d:\galvan\parcial_2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Alumnos.h"
+	"LinkedList.h"
+
+1543496641 source:d:\galvan\parcial_2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"parser.h"
+
+1544551993 source:e:\programacion\laboratorio-y-programacion1\parcial_2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Alumnos.h"
+
+1544552011 e:\programacion\laboratorio-y-programacion1\parcial_2\linkedlist.h
+
+1544552163 e:\programacion\laboratorio-y-programacion1\parcial_2\alumnos.h
+	"LinkedList.h"
+
+1544552660 source:e:\programacion\laboratorio-y-programacion1\parcial_2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Alumnos.h"
+	"LinkedList.h"
+
+1544552660 source:e:\programacion\laboratorio-y-programacion1\parcial_2\alumnos.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	<ctype.h>
+	<time.h>
+	"Alumnos.h"
+	"LinkedList.h"
+
+1544552660 source:e:\programacion\2019 programacion\programacion\parcial\parcial_2 version final\parcial_2\alumnos.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	<ctype.h>
+	<time.h>
+	"Alumnos.h"
+	"LinkedList.h"
+
+1544552163 e:\programacion\2019 programacion\programacion\parcial\parcial_2 version final\parcial_2\alumnos.h
+	"LinkedList.h"
+
+1544552011 e:\programacion\2019 programacion\programacion\parcial\parcial_2 version final\parcial_2\linkedlist.h
+
+1544551993 source:e:\programacion\2019 programacion\programacion\parcial\parcial_2 version final\parcial_2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Alumnos.h"
+
+1544552660 source:e:\programacion\2019 programacion\programacion\parcial\parcial_2 version final\parcial_2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Alumnos.h"
+	"LinkedList.h"
+
