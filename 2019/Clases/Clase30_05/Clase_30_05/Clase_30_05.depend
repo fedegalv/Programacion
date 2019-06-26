@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1559223866 source:d:\galvan\programacion\2019\clases\clase30_05\clase_30_05\alumno.c
+	"string.h"
+	"alumno.h"
+
+1559224470 source:d:\galvan\programacion\2019\clases\clase30_05\clase_30_05\main.c
+	<stdio.h>
+	<stdlib.h>
+	"alumno.h"
+	"string.h"
+
+1559219989 d:\galvan\programacion\2019\clases\clase30_05\clase_30_05\alumno.h
+

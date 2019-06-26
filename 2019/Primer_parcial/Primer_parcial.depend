@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # depslib dependency file v1.0
 1556680254 source:e:\programacion\laboratorio-y-programacion2019\laboratorio-y-programacion1-master\2019\primer_parcial\funcionesaux.c
 	<stdio.h>
@@ -117,3 +118,124 @@
 	"informes.h"
 	"pelicula.h"
 
+=======
+# depslib dependency file v1.0
+1556680254 source:e:\programacion\laboratorio-y-programacion2019\laboratorio-y-programacion1-master\2019\primer_parcial\funcionesaux.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	"ctype.h"
+	"funcionesAux.h"
+
+1556680254 e:\programacion\laboratorio-y-programacion2019\laboratorio-y-programacion1-master\2019\primer_parcial\funcionesaux.h
+
+1556680373 source:e:\programacion\laboratorio-y-programacion2019\laboratorio-y-programacion1-master\2019\primer_parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funcionesAux.h"
+
+1558016983 source:d:\galvan\programacion\2019\primer_parcial\funcionesaux.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	"ctype.h"
+	"funcionesAux.h"
+	"pelicula.h"
+	"informes.h"
+
+1558007627 d:\galvan\programacion\2019\primer_parcial\funcionesaux.h
+
+1558007627 source:d:\galvan\programacion\2019\primer_parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funcionesAux.h"
+
+1558013131 d:\galvan\programacion\2019\primer_parcial\pelicula.h
+	"actores.h"
+
+1558007627 source:d:\galvan\programacion\2019\primer_parcial\actores.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pelicula.h"
+	"actores.h"
+	"funcionesAux.h"
+
+1558007627 d:\galvan\programacion\2019\primer_parcial\actores.h
+
+1558016780 source:d:\galvan\programacion\2019\primer_parcial\pelicula.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ctype.h"
+	"pelicula.h"
+	"pelicula.h"
+	"funcionesAux.h"
+	"informes.h"
+
+1558017073 source:d:\galvan\programacion\2019\primer_parcial\informes.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	"ctype.h"
+	"funcionesAux.h"
+	"informes.h"
+	"pelicula.h"
+
+1558017017 d:\galvan\programacion\2019\primer_parcial\informes.h
+	"actores.h"
+	"pelicula.h"
+
+1557976162 source:e:\programacion\2019 programacion\programacion\2019\primer_parcial\actores.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pelicula.h"
+	"actores.h"
+	"funcionesAux.h"
+
+1558557850 e:\programacion\2019 programacion\programacion\2019\primer_parcial\pelicula.h
+	"actores.h"
+
+1557953228 e:\programacion\2019 programacion\programacion\2019\primer_parcial\actores.h
+
+1557861341 e:\programacion\2019 programacion\programacion\2019\primer_parcial\funcionesaux.h
+
+1558562053 source:e:\programacion\2019 programacion\programacion\2019\primer_parcial\funcionesaux.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	"ctype.h"
+	"funcionesAux.h"
+	"pelicula.h"
+	"informes.h"
+
+1558561998 e:\programacion\2019 programacion\programacion\2019\primer_parcial\informes.h
+	"actores.h"
+	"pelicula.h"
+
+1557402308 source:e:\programacion\2019 programacion\programacion\2019\primer_parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funcionesAux.h"
+
+1558557850 source:e:\programacion\2019 programacion\programacion\2019\primer_parcial\pelicula.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ctype.h"
+	"pelicula.h"
+	"pelicula.h"
+	"funcionesAux.h"
+	"informes.h"
+
+1558562094 source:e:\programacion\2019 programacion\programacion\2019\primer_parcial\informes.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	"ctype.h"
+	"funcionesAux.h"
+	"informes.h"
+	"pelicula.h"
+
+>>>>>>> 38f31bbca939372d4e142da607f5931a15ab46af
