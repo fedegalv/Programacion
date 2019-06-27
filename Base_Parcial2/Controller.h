@@ -1,3 +1,4 @@
+#include "LinkedList.h"
 /** \brief Lee el archivo en modo texto, parsea y agrega los elementos al linked list.
  *
  * \param path char* Nombre del archivo a leer

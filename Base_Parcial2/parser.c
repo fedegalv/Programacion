@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "parser.h"
 #include "LinkedList.h"
-#include "Employee.h"
+#include "Empleados.h"
 #include "string.h"
 
 /** \brief Parsea los datos los datos de los empleados desde el archivo data.csv (modo texto).
@@ -15,27 +16,23 @@ int parser_EmployeeFromText(FILE* pFile, LinkedList* pArrayListEmployee)
 {
     int r;
     char id[10];
-    char nombre[30];
-    char hsTrabajadas[10];
-    char sueldo[30];
-    int cont = 0;
-    Employee* pEmpleado;
+    char nombre[51];
+    char empleo[51];
+    char edad[10];
+    char horasTrabajadas[10];
+    int cont = 1;
+    sEmpleado* pEmpleado;
     do
     {
-        pEmpleado= employee_new();
-        r= fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", id, nombre, hsTrabajadas, sueldo);
-        if(r==4)
+        pEmpleado= empleado_new();
+        r= fscanf(pFile, "%[^,],%[^,],%[^,],%[^,],%[^\n]\n", id, nombre, empleo, edad,horasTrabajadas);
+        if(r==5)
         {
-            if(cont>0)
-            {
-
-                employee_newParametros(id,nombre,hsTrabajadas,sueldo,pEmpleado); // SE ENVIA LOS DATOS PARSEADOS PARA QUE SE AGREGEN A LA STRUCT
+            //printf("ID STRING %s\n", id);
+                employee_newParametros(id, nombre, empleo, edad, horasTrabajadas, pEmpleado); // SE ENVIA LOS DATOS PARSEADOS PARA QUE SE AGREGEN A LA STRUCT
+               // printf("ID--%d \n", pEmpleado->id);
                 ll_add(pArrayListEmployee, pEmpleado); // SE AGREGA LA STRUCT A EL ARRAY DE STRUCT
                 //printf("EMPLEADO--%d AGREGADO\n", cont);
-            }
-            else{
-                    //printf("FORMATO: %s--%s--%s--%s \n", id, nombre, hsTrabajadas, sueldo);
-            }
             cont++;
 
         }
@@ -55,22 +52,3 @@ int parser_EmployeeFromText(FILE* pFile, LinkedList* pArrayListEmployee)
  * \return int
  *
  */
-int parser_EmployeeFromBinary(FILE* pFile, LinkedList* pArrayListEmployee)
-{
-    //int cont = 0;
-    Employee* pEmpleado;
-    int y=0;
-        do
-        {
-
-            pEmpleado= employee_new();
-            fread(pEmpleado, sizeof(Employee), 1, pFile);
-            ll_add(pArrayListEmployee, pEmpleado);
-            y++;
-
-        }while(!feof(pFile));
-
-    //printf("CUENTA AL LEER: %d", y);
-
-    return 1;
-}

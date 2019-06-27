@@ -3,7 +3,8 @@
 #include "string.h"
 #include <ctype.h>
 #include <time.h>
-#include "Propietarios.h"
+#include "LinkedList.h"
+#include "Empleados.h"
 int mostrarMenu(void)
 {
     int opcion;
@@ -26,13 +27,43 @@ int mostrarMenu(void)
         return opcion;
 }
 
-void limpiarPantalla(void)
+/*
+int getLastID(LinkedList* pArrayListEmployee)
+{
+    int cantElementos;
+    int lastID= 0;
+    int i;
+    cantElementos= ll_len(pArrayListEmployee);
+    Employee* auxEmployee;
+
+    if(cantElementos == 0)
+    {
+        lastID= 1;
+    }
+    else
+    {
+        for(i=0; i< cantElementos; i++)
+        {
+            auxEmployee= (Employee*) ll_get(pArrayListEmployee, i);
+
+                if(auxEmployee->id >= lastID)
+                {
+                    lastID= auxEmployee->id +1;
+                }
+
+        }
+    }
+
+
+    return lastID;
+}
+*/
+void wipeScreen(void)
 {
     system("pause"); // pausa el programa, para limpiar
     system("cls"); // se limpia la consola
 }
-
-int ingresoNumero(void)
+int verifyNumber()
 {
     int numero;
     int esNumero; // esNumero funcionara como booleano, para validar si el numero es valido o no, en caso que no sea valido se volvera a pedirlo
@@ -59,7 +90,7 @@ int ingresoNumero(void)
     return numeroDevolver;
 }
 
-int verificarCadena(char cadena[51])
+int verifyString(char cadena[51])
 {
     int largoCadena;
     int i;
@@ -95,7 +126,7 @@ int verificarCadena(char cadena[51])
     return 0;
 }
 
-void formateoCadenas(char* texto)
+void formatString(char* texto)
 {
     int i; // VARIABLE CONTROL
     int largo; // VARIABLE ALMACENA LARGO DEL STRING
@@ -114,96 +145,82 @@ void formateoCadenas(char* texto)
     }
 
 }
-int verificarTarjeta(char tarjeta[])
+/*
+int askData(Employee* pEmpleado, int id)
 {
-    int tamTarjeta;
-    int i;
-    int esValido =1 ;
-    tamTarjeta= strlen(tarjeta);
-    for(i=0; i <tamTarjeta; i++)
+    char nombre[51];
+    int sueldo;
+    int hsTrabajadas;
+    int askDataOK= -1;
+    printf("EMPLEADO NUMERO DE ID: %d\n", id);
+    fflush(stdin);
+
+    printf("Ingrese nombre del empleado: ");
+    gets(nombre);
+    verifyString(nombre);
+    formatString(nombre);
+
+    fflush(stdin);
+
+    printf("Ingrese salario del empleado: ");
+    sueldo=verifyNumber();
+
+    printf("Ingrese horas trabajadas del empleado: ");
+    hsTrabajadas=verifyNumber();
+    employee_newVerifiedParametros(id, nombre, hsTrabajadas, sueldo, pEmpleado);
+    askDataOK= 0;
+    return askDataOK;
+}
+
+int editAskIfSure(void)
+{
+    int option;
+    fflush(stdin);
+    printf("ESTA SEGURO DE QUE DESEA EDITAR EL EMPLEADO?\n"
+                   "1- SI\n"
+                   "2- NO\n"
+                   "OPCION ELEGIDA: ");
+            scanf("%d", &option);
+    return option;
+}
+*/
+LinkedList* saveSortedList(LinkedList* pSortedList,LinkedList* pArrayListEmployeeOriginal, int sorted)
+{
+    int opcion;
+    LinkedList* aux = ll_newLinkedList();
+    if(sorted == 0)
     {
-        if( isdigit(tarjeta[i]) )
+        printf("\nDesea guardar la lista ordenada? Esto reemplazara a la anterior\n1-SI\n2-NO\nOPCION SELECCIONADA: ");
+        scanf("%d",&opcion);
+        if(opcion == 1)
         {
-            continue;
+            printf("\nLista ordenada guardada con exito\n");
+            aux= ll_clone(pSortedList);
+        }
+        else if (opcion == 2)
+        {
+            aux= ll_clone(pArrayListEmployeeOriginal);
+            printf("\nNo se guardara la lista ordenada, volviendo al menu...\n");
         }
         else
         {
-            esValido= 0;
-            printf("INGRESO ALGUN CARACTER NO VALIDO, VUELVA A INGRESAR\n");
-            break;
+            aux= ll_clone(pArrayListEmployeeOriginal);
+            printf("\nOPCION INVALIDA\n");
         }
     }
-    if( esValido != 0)
-    {
-
-        printf("LARGO DE TARJETA INGRESADA: %d\n",tamTarjeta);
-        if (tamTarjeta < 16 || tamTarjeta > 16)
-        {
-            printf("No tiene el largo correcto\n");
-            esValido= 0;
-        }
-        else
-        {
-            printf("TARJETA VALIDA\n");
-        }
-    }
-    return esValido;
+    wipeScreen();
+    return aux;
 }
-
-int devolverHorasEstadia()
+/*
+void cleanBinary(LinkedList* pArrayListEmployee)
 {
-    int horas;
-
-    srand(time(NULL));
-
-    horas = (rand()%24)+1;
-
-    return horas ;
-
+    int index;
+    Employee* auxEmployee;
+    auxEmployee= employee_new();
+    int idFound;
+    int* pIdFound= &idFound;
+    auxEmployee= employee_checkId(pArrayListEmployee,0,pIdFound);
+    index= ll_indexOf(pArrayListEmployee, auxEmployee);
+    ll_remove(pArrayListEmployee, index);
 }
-
-int validacionPatente(char patente[])
-{
-    int tamPantente;
-    int j;
-    int patenteValida = 1;
-    tamPantente= strlen(patente);
-    if(tamPantente == 7)
-        for(j=0; j <3; j++)
-        {
-            if( isalpha(patente[j]) )
-            {
-                continue;
-            }
-            else
-            {
-                patenteValida= 0;
-                printf("PATENTE NO VALIDA, EL FORMATO ES: AAA 111\n");
-                break;
-            }
-        }
-    if(patenteValida == 1)
-    {
-        for(j=3; j < 7; j++)
-        {
-            if( j== 3 && isspace(patente[j] ))
-            {
-                continue;
-            }
-            else
-            {
-                if( isdigit(patente[j]) )
-                {
-                    continue;
-                }
-                else
-                {
-                    patenteValida = 0;
-                    printf("PATENTE NO VALIDA, EL FORMATO ES: AAA 111\n");
-                    break;
-                }
-            }
-        }
-    }
-    return patenteValida;
-}
+*/

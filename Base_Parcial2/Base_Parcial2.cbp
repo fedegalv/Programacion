@@ -35,6 +35,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Controller.h" />
+		<Unit filename="Empleados.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Empleados.h" />
 		<Unit filename="Funciones_aux.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "LinkedList.h"
-#include "Employee.h"
+#include "Empleados.h"
 #include "Funciones_aux.h"
 #include "parser.h"
 #include <string.h>
 #include "Controller.h"
-#define VALID 0
+#define VALID 1
 #define INVALID -1
 
 /** \brief Carga los datos de los empleados desde el archivo data.csv (modo texto).
@@ -83,84 +83,6 @@ int controller_loadFromText(char* path, LinkedList* pArrayListEmployee,int* pOve
     return valid;
 }
 
-/** \brief Carga los datos de los empleados desde el archivo data.csv (modo binario).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
-int controller_loadFromBinary(char* path, LinkedList* pArrayListEmployee, int* pOverwrite)
-{
-    wipeScreen();
-    fflush(stdin);
-    int opcion;
-    int valid;
-    FILE* pArchivo;
-    if(*pOverwrite == 1)
-    {
-        printf("El archivo ya fue abierto con anterioridad, desea leerlo nuevamente? \nEsto borrara cualquier cambio realizado que no haya sido guardado en el archivo.\n1-SI\n2-NO\nOPCION SELECCIONADA:");
-        scanf("%d", &opcion);
-        switch(opcion)
-        {
-        case 1:
-            ll_clear(pArrayListEmployee);
-            pArchivo= fopen(path,"rb");
-
-            if(pArchivo!= NULL)
-            {
-                parser_EmployeeFromBinary(pArchivo,pArrayListEmployee); // LEE Y PARSEA LAS LINEAS DEL ARCHIVO
-                valid= VALID;
-                cleanBinary(pArrayListEmployee);
-                *pOverwrite= 1;
-                printf("Empleados ah sido sobreescrito!\n");
-                fclose(pArchivo);
-            }
-            else
-            {
-                printf("ARCHIVO NO EXISTE\n");
-                valid= INVALID;
-                *pOverwrite= 1;
-            }
-            break;
-        case 2:
-            valid=  VALID;
-            printf("Cancelando...\n");
-            break;
-        default:
-            printf("Opcion no valida\n");
-            break;
-
-        }
-    }
-    else if(*pOverwrite == -1)
-    {
-
-
-        pArchivo= fopen(path,"rb");
-
-        if(pArchivo!= NULL)
-        {
-            parser_EmployeeFromBinary(pArchivo,pArrayListEmployee); // LEE Y PARSEA LAS LINEAS DEL ARCHIVO
-            cleanBinary(pArrayListEmployee);
-            valid=  VALID;
-            *pOverwrite= 1;
-            printf("Archivo abierto!\n");
-            fclose(pArchivo);
-        }
-        else
-        {
-            printf("ARCHIVO NO EXISTE\n");
-            valid= INVALID;
-            *pOverwrite= -1;
-        }
-    }
-
-
-
-    wipeScreen();
-    return valid;
-}
 
 /** \brief Alta de empleados
  *
@@ -169,6 +91,8 @@ int controller_loadFromBinary(char* path, LinkedList* pArrayListEmployee, int* p
  * \return int
  *
  */
+
+ /*
 int controller_addEmployee(LinkedList* pArrayListEmployee)
 {
     wipeScreen();
@@ -188,7 +112,7 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
     //printf("estado de ADD %d \n", addOK);
     return addOK;
 }
-
+*/
 /** \brief Modificar datos de empleado
  *
  * \param path char*
@@ -196,6 +120,7 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
  * \return int
  *
  */
+ /*
 int controller_editEmployee(LinkedList* pArrayListEmployee,int isValid)
 {
     wipeScreen();
@@ -318,14 +243,15 @@ int controller_editEmployee(LinkedList* pArrayListEmployee,int isValid)
     wipeScreen();
     return 0;
 }
-
+*/
 /** \brief Baja de empleado
  *
  * \param path char*
  * \param pArrayListEmployee LinkedList*
  * \return int
  *
- */
+*/
+/*
 int controller_removeEmployee(LinkedList* pArrayListEmployee, int isValid)
 {
     wipeScreen();
@@ -401,6 +327,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee, int isValid)
     wipeScreen();
     return 0;
 }
+*/
 
 /** \brief Listar empleados
  *
@@ -409,23 +336,35 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee, int isValid)
  * \return int
  *
  */
+
 int controller_ListEmployee(LinkedList* pArrayListEmployee, int isValid)
 {
     wipeScreen();
     int validList= INVALID;
     int listLen;
     int i;
-    Employee* auxEmployee;
-    auxEmployee= employee_new();
+    int id;
+    int edad;
+    int hsTrabajadas;
+    char nombre[51];
+    char empleo[51];
+    sEmpleado* auxEmployee;
+    auxEmployee= empleado_new();
     if(isValid == VALID)
     {
         printf("LISTA DE EMPLEADOS: \n");
-        printf("%5s %15s %15s %8s \n", "ID","NOMBRE","HS TRABAJADAS","SUELDO");
+        printf("%5s %15s %15s %8s %10s \n", "ID","NOMBRE","EMPLEO","EDAD", "HORAS TRABAJADAS");
         listLen= ll_len(pArrayListEmployee);
         for(i=0; i < listLen; i++)
         {
-            auxEmployee= (Employee*) ll_get(pArrayListEmployee, i);
-            printf("%5d %15s %15d %8d \n", auxEmployee->id, auxEmployee->nombre, auxEmployee->horasTrabajadas, auxEmployee->sueldo);
+            auxEmployee= (sEmpleado*) ll_get(pArrayListEmployee, i);
+            // GETTER
+            id= get_id(auxEmployee);
+            get_nombre(auxEmployee, nombre);
+            get_empleo(auxEmployee, empleo);
+            edad=get_edad(auxEmployee);
+            hsTrabajadas= get_hsTrabajadas(auxEmployee);
+            printf("%5d %15s %15s %8d %10d \n", id, nombre, empleo, edad, hsTrabajadas );
         }
         validList= 1;
         printf("CANT ELEM LISTA : %d \n",listLen);
@@ -445,6 +384,7 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee, int isValid)
  * \return int
  *
  */
+ /*
 int controller_sortEmployee(LinkedList* pArrayListEmployee,int isValid)
 {
     int sorted= INVALID;
@@ -514,7 +454,9 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee,int isValid)
 
     return sorted;
 }
+*/
 
+/*
 int controller_saveAsText(char* path, LinkedList* pArrayListEmployee,int isValid)
 {
     int opcion;
@@ -574,7 +516,7 @@ int controller_saveAsText(char* path, LinkedList* pArrayListEmployee,int isValid
 
     return 0;
 }
-
+*/
 /** \brief Guarda los datos de los empleados en el archivo data.csv (modo binario).
  *
  * \param path char*
@@ -582,62 +524,4 @@ int controller_saveAsText(char* path, LinkedList* pArrayListEmployee,int isValid
  * \return int
  *
  */
-int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee, int isValid)
-{
-
-    int opcion;
-
-
-
-    fflush(stdin);
-    if (isValid == VALID)
-    {
-
-
-        if(pArrayListEmployee!= NULL)
-        {
-            printf("Esta operacion sobreescribira el archivo(si no existe, este sera creado)\nEsta seguro que desea seguir?\n1- Si\n2- No\nOpcion seleccionada: ");
-            scanf("%d", &opcion);
-            if(opcion == 1)
-            {
-                FILE* pFile;
-                pFile= fopen(path,"wb");
-                wipeScreen();
-                int listLen;
-                int i;
-                int y=0;
-
-                Employee* auxEmployee;
-                listLen= ll_len(pArrayListEmployee);
-                printf("\nCopiando a archivo...\n");
-                for(i=0; i < listLen; i++)
-                {
-                    auxEmployee= ll_get(pArrayListEmployee, i);
-                    fwrite(auxEmployee, sizeof(Employee), 1, pFile);
-                    y++;
-                }
-                fclose(pFile);
-                printf("Archivo escrito de manera correcta!\n");
-                //printf("ESCRIBIO: %d", y);
-
-            }
-            else if(opcion == 2)
-            {
-                printf("Cancelando operacion...\n");
-            }
-            else
-            {
-                printf("Opcion invalida\n");
-            }
-
-        }
-    }
-    else
-    {
-        printf("NO HAY DATOS QUE GUARDAR!\n");
-    }
-    wipeScreen();
-
-    return 0;
-}
 

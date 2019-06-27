@@ -63,3 +63,31 @@
 	"Alumnos.h"
 	"LinkedList.h"
 
+1561647135 source:d:\galvan\programacion\base_parcial2\parcial_2\alumnos.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	<ctype.h>
+	<time.h>
+	"Alumnos.h"
+	"LinkedList.h"
+
+1561647135 d:\galvan\programacion\base_parcial2\parcial_2\alumnos.h
+	"LinkedList.h"
+
+1561647135 d:\galvan\programacion\base_parcial2\parcial_2\linkedlist.h
+
+1561647135 source:d:\galvan\programacion\base_parcial2\parcial_2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Alumnos.h"
+
+1561647136 source:d:\galvan\programacion\base_parcial2\parcial_2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Alumnos.h"
+	"LinkedList.h"
+

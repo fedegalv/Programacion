@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "LinkedList.h"
-#include "Alumnos.h"
+#include "Empleados.h"
 
 int (*pFunc)(void*,void*);
 static Node* getNode(LinkedList* this, int nodeIndex);
@@ -798,7 +798,7 @@ LinkedList* H_Filter(LinkedList* this, int (*pFuncion) (LinkedList* ,int index, 
     }
     return listaFiltrada;
 }
-int ll_map(LinkedList* this, int (*pFuncion)(LinkedList*, void*, int) )
+int ll_map(LinkedList* this, int (*pFuncion)(void*) )
 {
     int returnAux= -1;
     void* aux;
@@ -809,7 +809,7 @@ int ll_map(LinkedList* this, int (*pFuncion)(LinkedList*, void*, int) )
         for(i=0; i < listLen; i++)
         {
             aux= ll_get(this, i);
-            returnAux= pFuncion(this, aux, i);
+            returnAux= pFuncion(aux);
             /*
              if( returnAux == 0)
                 {

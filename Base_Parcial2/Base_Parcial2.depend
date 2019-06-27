@@ -1,0 +1,66 @@
+# depslib dependency file v1.0
+1561652080 source:d:\galvan\programacion\base_parcial2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Empleados.h"
+	"Funciones_aux.h"
+	"parser.h"
+	<string.h>
+	"Controller.h"
+
+1561656066 d:\galvan\programacion\base_parcial2\linkedlist.h
+
+1561656999 d:\galvan\programacion\base_parcial2\empleados.h
+	"LinkedList.h"
+
+1561654335 d:\galvan\programacion\base_parcial2\funciones_aux.h
+	"LinkedList.h"
+	"Empleados.h"
+
+1561651633 d:\galvan\programacion\base_parcial2\parser.h
+	"LinkedList.h"
+
+1561650205 d:\galvan\programacion\base_parcial2\controller.h
+	"LinkedList.h"
+
+1561657327 source:d:\galvan\programacion\base_parcial2\empleados.c
+	"Empleados.h"
+	<stdio.h>
+	<stdlib.h>
+	"parser.h"
+	"string.h"
+
+1561650164 source:d:\galvan\programacion\base_parcial2\funciones_aux.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	<ctype.h>
+	<time.h>
+	"LinkedList.h"
+	"Empleados.h"
+
+1561656092 source:d:\galvan\programacion\base_parcial2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Empleados.h"
+
+1561657416 source:d:\galvan\programacion\base_parcial2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Funciones_aux.h"
+	"Controller.h"
+	"LinkedList.h"
+	"Empleados.h"
+	"parser.h"
+
+1561652971 source:d:\galvan\programacion\base_parcial2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"parser.h"
+	"LinkedList.h"
+	"Empleados.h"
+	"string.h"
+
