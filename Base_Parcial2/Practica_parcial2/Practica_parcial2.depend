@@ -1,0 +1,38 @@
+# depslib dependency file v1.0
+1561487866 source:e:\programacion\2019 programacion\programacion\practicas\practica_parcial2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Productos.h"
+
+1544552011 e:\programacion\2019 programacion\programacion\practicas\practica_parcial2\linkedlist.h
+
+1561563497 e:\programacion\2019 programacion\programacion\practicas\practica_parcial2\productos.h
+	"LinkedList.h"
+
+1561563613 source:e:\programacion\2019 programacion\programacion\practicas\practica_parcial2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Productos.h"
+	"LinkedList.h"
+	"Funciones_aux.h"
+
+1561564222 source:e:\programacion\2019 programacion\programacion\practicas\practica_parcial2\productos.c
+	<stdio.h>
+	<stdlib.h>
+	"Productos.h"
+	"LinkedList.h"
+	"Funciones_aux.h"
+	"string.h"
+
+1561496040 source:e:\programacion\2019 programacion\programacion\practicas\practica_parcial2\funciones_aux.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"LinkedList.h"
+	"Productos.h"
+	"string.h"
+
+1561491643 e:\programacion\2019 programacion\programacion\practicas\practica_parcial2\funciones_aux.h
+

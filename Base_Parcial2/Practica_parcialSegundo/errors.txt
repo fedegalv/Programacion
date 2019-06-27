@@ -1,0 +1,5 @@
+Fecha;Hora;Nombre;Mensaje;EMAIL
+
+09/07/2017;02:33;Contabilidad.exe;Disk faliure;ricardit459@yahoo.com.ar
+
+24/10/2018;03:28;REPORTE.EXE;No power;fgv066@hotmail.com
